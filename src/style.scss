@@ -1,0 +1,34 @@
+$black: #222222;
+$green: #879b6c;
+$gray: #929292;
+$white: #d8d8d8;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  background-color: $black;
+}
+
+svg {
+  flex: 1;
+  padding: 5%;
+}
+
+.land {
+  fill: $white;
+  fill-opacity: 1;
+  stroke: $black;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
+}
+
+.land:hover {
+  fill: $gray;
+}
