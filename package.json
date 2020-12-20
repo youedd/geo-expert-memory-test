@@ -16,6 +16,8 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
+    "@types/hammerjs": "^2.0.36",
+    "hammerjs": "^2.0.8",
     "svg-pan-zoom": "^3.6.1",
     "ttag": "^1.7.23"
   }

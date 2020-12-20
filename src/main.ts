@@ -1,6 +1,6 @@
 import { t } from "ttag";
-import SvgPanZoom from "svg-pan-zoom";
 import data from "./scripts/data";
+import { creatPanZoom } from "./scripts/initZoomPan";
 /*
 // const delta = 0.1;
 
@@ -32,12 +32,7 @@ const state = {
   found: 0,
 };
 
-const panZoom = SvgPanZoom("svg", {
-  dblClickZoomEnabled: true,
-  mouseWheelZoomEnabled: true,
-  maxZoom: 50,
-});
-
+const panZoom = creatPanZoom();
 window.addEventListener("resize", () => {
   panZoom.resize();
   panZoom.fit();
