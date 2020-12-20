@@ -5,7 +5,7 @@ export const creatPanZoom = function () {
   let hammer: HammerManager;
   return SvgPanZoom("svg", {
     dblClickZoomEnabled: true,
-    mouseWheelZoomEnabled: false,
+    mouseWheelZoomEnabled: true,
 
     maxZoom: 50,
     customEventsHandler: {
