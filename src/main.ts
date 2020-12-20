@@ -105,10 +105,12 @@ form.addEventListener("submit", (event) => {
   if (territory) {
     const element = document.getElementById(territory.id);
     showTerritory((element as unknown) as SVGPathElement);
-    element.setAttribute("correct", "");
     const title = element.getElementsByTagName("title")[0];
     title.innerHTML = territory.title;
-    state.found++;
+    if (!element.hasAttribute("correct")) {
+      element.setAttribute("correct", "");
+      state.found++;
+    }
     updateDescription();
   }
   input.value = "";
