@@ -33,6 +33,10 @@ svg {
   fill: $gray;
 }
 
+.land[correct] {
+  fill: $green;
+}
+
 input {
   opacity: 0.8;
 

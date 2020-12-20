@@ -10,7 +10,6 @@ const lerp = (start: number, end: number, amt: number) => {
 const svgHandler = SvgPanZoom("svg", {
   dblClickZoomEnabled: false,
   mouseWheelZoomEnabled: false,
-
 });
 
 
@@ -52,3 +51,17 @@ zoomoutButoon.addEventListener("click", () => {
   newZoom = svgHandler.getZoom() / 1.5;
   startLerp();
 });
+
+
+const input = document.getElementById("input") as HTMLInputElement;
+
+input.addEventListener('change', ()=> {
+  const answer = input.value.trim().toLowerCase();
+  const terretory = data.find(item => item.title.toLowerCase() === answer.toLowerCase() )
+  if( terretory ) {
+    const element = document.getElementById(terretory.id);
+    element.setAttribute("correct", "");
+  }
+  input.value = ""
+})
+

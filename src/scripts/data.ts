@@ -1,531 +1,706 @@
 import { t } from "ttag";
 
-const data = {
-  AE: {
+const data = [
+  {
+    id: 'AE',
     title: t`United Arab Emirates`,
   },
-  AF: {
+  {
+    id: 'AF',
     title: t`Afghanistan`,
   },
-  AL: {
+  {
+    id: 'AL',
     title: t`Albania`,
   },
-  AM: {
+  {
+    id: 'AM',
     title: t`Armenia`,
   },
-  AO: {
+  {
+    id: 'AO',
     title: t`Angola`,
   },
-  AR: {
+  {
+    id: 'AR',
     title: t`Argentina`,
   },
-  AT: {
+  {
+    id: 'AT',
     title: t`Austria`,
   },
-  AU: {
+  {
+    id: 'AU',
     title: t`Australia`,
   },
-  AZ: {
+  {
+    id: 'AZ',
     title: t`Azerbaijan`,
   },
-  BA: {
+  {
+    id: 'BA',
     title: t`Bosnia and Herzegovina`,
   },
-  BD: {
+  {
+    id: 'BD',
     title: t`Bangladesh`,
   },
-  BE: {
+  {
+    id: 'BE',
     title: t`Belgium`,
   },
-  BF: {
+  {
+    id: 'BF',
     title: t`Burkina Faso`,
   },
-  BG: {
+  {
+    id: 'BG',
     title: t`Bulgaria`,
   },
-  BI: {
+  {
+    id: 'BI',
     title: t`Burundi`,
   },
-  BJ: {
+  {
+    id: 'BJ',
     title: t`Benin`,
   },
-  BN: {
+  {
+    id: 'BN',
     title: t`Brunei Darussalam`,
   },
-  BO: {
+  {
+    id: 'BO',
     title: t`Bolivia`,
   },
-  BR: {
+  {
+    id: 'BR',
     title: t`Brazil`,
   },
-  BS: {
+  {
+    id: 'BS',
     title: t`Bahamas`,
   },
-  BT: {
+  {
+    id: 'BT',
     title: t`Bhutan`,
   },
-  BW: {
+  {
+    id: 'BW',
     title: t`Botswana`,
   },
-  BY: {
+  {
+    id: 'BY',
     title: t`Belarus`,
   },
-  BZ: {
+  {
+    id: 'BZ',
     title: t`Belize`,
   },
-  CA: {
+  {
+    id: 'CA',
     title: t`Canada`,
   },
-  CD: {
+  {
+    id: 'CD',
     title: t`Democratic Republic of Congo`,
   },
-  CF: {
+  {
+    id: 'CF',
     title: t`Central African Republic`,
   },
-  CG: {
+  {
+    id: 'CG',
     title: t`Republic of Congo`,
   },
-  CH: {
+  {
+    id: 'CH',
     title: t`Switzerland`,
   },
-  CI: {
+  {
+    id: 'CI',
     title: t`Côte d'Ivoire`,
   },
-  CL: {
+  {
+    id: 'CL',
     title: t`Chile`,
   },
-  CM: {
+  {
+    id: 'CM',
     title: t`Cameroon`,
   },
-  CN: {
+  {
+    id: 'CN',
     title: t`China`,
   },
-  CO: {
+  {
+    id: 'CO',
     title: t`Colombia`,
   },
-  CR: {
+  {
+    id: 'CR',
     title: t`Costa Rica`,
   },
-  CU: {
+  {
+    id: 'CU',
     title: t`Cuba`,
   },
-  CY: {
+  {
+    id: 'CY',
     title: t`Cyprus`,
   },
-  CZ: {
+  {
+    id: 'CZ',
     title: t`Czechia`,
   },
-  DE: {
+  {
+    id: 'DE',
     title: t`Germany`,
   },
-  DJ: {
+  {
+    id: 'DJ',
     title: t`Djibouti`,
   },
-  DK: {
+  {
+    id: 'DK',
     title: t`Denmark`,
   },
-  DO: {
+  {
+    id: 'DO',
     title: t`Dominican Republic`,
   },
-  DZ: {
+  {
+    id: 'DZ',
     title: t`Algeria`,
   },
-  EC: {
+  {
+    id: 'EC',
     title: t`Ecuador`,
   },
-  EE: {
+  {
+    id: 'EE',
     title: t`Estonia`,
   },
-  EG: {
+  {
+    id: 'EG',
     title: t`Egypt`,
   },
-  ER: {
+  {
+    id: 'ER',
     title: t`Eritrea`,
   },
-  ES: {
+  {
+    id: 'ES',
     title: t`Spain`,
   },
-  ET: {
+  {
+    id: 'ET',
     title: t`Ethiopia`,
   },
-  FK: {
+  {
+    id: 'FK',
     title: t`Falkland Islands`,
   },
-  FI: {
+  {
+    id: 'FI',
     title: t`Finland`,
   },
-  FJ: {
+  {
+    id: 'FJ',
     title: t`Fiji`,
   },
-  FR: {
+  {
+    id: 'FR',
     title: t`France`,
   },
-  GA: {
+  {
+    id: 'GA',
     title: t`Gabon`,
   },
-  GB: {
+  {
+    id: 'GB',
     title: t`United Kingdom`,
   },
-  GE: {
+  {
+    id: 'GE',
     title: t`Georgia`,
   },
-  GF: {
+  {
+    id: 'GF',
     title: t`French Guiana`,
   },
-  GH: {
+  {
+    id: 'GH',
     title: t`Ghana`,
   },
-  GL: {
+  {
+    id: 'GL',
     title: t`Greenland`,
   },
-  GM: {
+  {
+    id: 'GM',
     title: t`Gambia`,
   },
-  GN: {
+  {
+    id: 'GN',
     title: t`Guinea`,
   },
-  GQ: {
+  {
+    id: 'GQ',
     title: t`Equatorial Guinea`,
   },
-  GR: {
+  {
+    id: 'GR',
     title: t`Greece`,
   },
-  GT: {
+  {
+    id: 'GT',
     title: t`Guatemala`,
   },
-  GW: {
+  {
+    id: 'GW',
     title: t`Guinea-Bissau`,
   },
-  GY: {
+  {
+    id: 'GY',
     title: t`Guyana`,
   },
-  HN: {
+  {
+    id: 'HN',
     title: t`Honduras`,
   },
-  HR: {
+  {
+    id: 'HR',
     title: t`Croatia`,
   },
-  HT: {
+  {
+    id: 'HT',
     title: t`Haiti`,
   },
-  HU: {
+  {
+    id: 'HU',
     title: t`Hungary`,
   },
-  ID: {
+  {
+    id: 'ID',
     title: t`Indonesia`,
   },
-  IE: {
+  {
+    id: 'IE',
     title: t`Ireland`,
   },
-  IL: {
+  {
+    id: 'IL',
     title: t`Israel`,
   },
-  IN: {
+  {
+    id: 'IN',
     title: t`India`,
   },
-  IQ: {
+  {
+    id: 'IQ',
     title: t`Iraq`,
   },
-  IR: {
+  {
+    id: 'IR',
     title: t`Iran`,
   },
-  IS: {
+  {
+    id: 'IS',
     title: t`Iceland`,
   },
-  IT: {
+  {
+    id: 'IT',
     title: t`Italy`,
   },
-  JM: {
+  {
+    id: 'JM',
     title: t`Jamaica`,
   },
-  JO: {
+  {
+    id: 'JO',
     title: t`Jordan`,
   },
-  JP: {
+  {
+    id: 'JP',
     title: t`Japan`,
   },
-  KE: {
+  {
+    id: 'KE',
     title: t`Kenya`,
   },
-  KG: {
+  {
+    id: 'KG',
     title: t`Kyrgyzstan`,
   },
-  KH: {
+  {
+    id: 'KH',
     title: t`Cambodia`,
   },
-  KP: {
+  {
+    id: 'KP',
     title: t`North Korea`,
   },
-  KR: {
+  {
+    id: 'KR',
     title: t`South Korea`,
   },
-  XK: {
+  {
+    id: 'XK',
     title: t`Kosovo`,
   },
-  KW: {
+  {
+    id: 'KW',
     title: t`Kuwait`,
   },
-  KZ: {
+  {
+    id: 'KZ',
     title: t`Kazakhstan`,
   },
-  LA: {
+  {
+    id: 'LA',
     title: t`Lao People's Democratic Republic`,
   },
-  LB: {
+  {
+    id: 'LB',
     title: t`Lebanon`,
   },
-  LK: {
+  {
+    id: 'LK',
     title: t`Sri Lanka`,
   },
-  LR: {
+  {
+    id: 'LR',
     title: t`Liberia`,
   },
-  LS: {
+  {
+    id: 'LS',
     title: t`Lesotho`,
   },
-  LT: {
+  {
+    id: 'LT',
     title: t`Lithuania`,
   },
-  LU: {
+  {
+    id: 'LU',
     title: t`Luxembourg`,
   },
-  LV: {
+  {
+    id: 'LV',
     title: t`Latvia`,
   },
-  LY: {
+  {
+    id: 'LY',
     title: t`Libya`,
   },
-  MA: {
+  {
+    id: 'MA',
     title: t`Morocco`,
   },
-  MD: {
+  {
+    id: 'MD',
     title: t`Moldova`,
   },
-  ME: {
+  {
+    id: 'ME',
     title: t`Montenegro`,
   },
-  MG: {
+  {
+    id: 'MG',
     title: t`Madagascar`,
   },
-  MK: {
+  {
+    id: 'MK',
     title: t`North Macedonia`,
   },
-  ML: {
+  {
+    id: 'ML',
     title: t`Mali`,
   },
-  MM: {
+  {
+    id: 'MM',
     title: t`Myanmar`,
   },
-  MN: {
+  {
+    id: 'MN',
     title: t`Mongolia`,
   },
-  MR: {
+  {
+    id: 'MR',
     title: t`Mauritania`,
   },
-  MW: {
+  {
+    id: 'MW',
     title: t`Malawi`,
   },
-  MX: {
+  {
+    id: 'MX',
     title: t`Mexico`,
   },
-  MY: {
+  {
+    id: 'MY',
     title: t`Malaysia`,
   },
-  MZ: {
+  {
+    id: 'MZ',
     title: t`Mozambique`,
   },
-  NA: {
+  {
+    id: 'NA',
     title: t`Namibia`,
   },
-  NC: {
+  {
+    id: 'NC',
     title: t`New Caledonia`,
   },
-  NE: {
+  {
+    id: 'NE',
     title: t`Niger`,
   },
-  NG: {
+  {
+    id: 'NG',
     title: t`Nigeria`,
   },
-  NI: {
+  {
+    id: 'NI',
     title: t`Nicaragua`,
   },
-  NL: {
+  {
+    id: 'NL',
     title: t`Netherlands`,
   },
-  NO: {
+  {
+    id: 'NO',
     title: t`Norway`,
   },
-  NP: {
+  {
+    id: 'NP',
     title: t`Nepal`,
   },
-  NZ: {
+  {
+    id: 'NZ',
     title: t`New Zealand`,
   },
-  OM: {
+  {
+    id: 'OM',
     title: t`Oman`,
   },
-  PA: {
+  {
+    id: 'PA',
     title: t`Panama`,
   },
-  PE: {
+  {
+    id: 'PE',
     title: t`Peru`,
   },
-  PG: {
+  {
+    id: 'PG',
     title: t`Papua New Guinea`,
   },
-  PH: {
+  {
+    id: 'PH',
     title: t`Philippines`,
   },
-  PL: {
+  {
+    id: 'PL',
     title: t`Poland`,
   },
-  PK: {
+  {
+    id: 'PK',
     title: t`Pakistan`,
   },
-  PR: {
+  {
+    id: 'PR',
     title: t`Puerto Rico`,
   },
-  PS: {
+  {
+    id: 'PS',
     title: t`Palestinian Territories`,
   },
-  PT: {
+  {
+    id: 'PT',
     title: t`Portugal`,
   },
-  PY: {
+  {
+    id: 'PY',
     title: t`Paraguay`,
   },
-  QA: {
+  {
+    id: 'QA',
     title: t`Qatar`,
   },
-  RO: {
+  {
+    id: 'RO',
     title: t`Romania`,
   },
-  RS: {
+  {
+    id: 'RS',
     title: t`Serbia`,
   },
-  RU: {
+  {
+    id: 'RU',
     title: t`Russia`,
   },
-  RW: {
+  {
+    id: 'RW',
     title: t`Rwanda`,
   },
-  SA: {
+  {
+    id: 'SA',
     title: t`Saudi Arabia`,
   },
-  SB: {
+  {
+    id: 'SB',
     title: t`Solomon Islands`,
   },
-  SD: {
+  {
+    id: 'SD',
     title: t`Sudan`,
   },
-  SE: {
+  {
+    id: 'SE',
     title: t`Sweden`,
   },
-  SI: {
+  {
+    id: 'SI',
     title: t`Slovenia`,
   },
-  SJ: {
+  {
+    id: 'SJ',
     title: t`Svalbard and Jan Mayen`,
   },
-  SK: {
+  {
+    id: 'SK',
     title: t`Slovakia`,
   },
-  SL: {
+  {
+    id: 'SL',
     title: t`Sierra Leone`,
   },
-  SN: {
+  {
+    id: 'SN',
     title: t`Senegal`,
   },
-  SO: {
+  {
+    id: 'SO',
     title: t`Somalia`,
   },
-  SR: {
+  {
+    id: 'SR',
     title: t`Suriname`,
   },
-  SS: {
+  {
+    id: 'SS',
     title: t`South Sudan`,
   },
-  SV: {
+  {
+    id: 'SV',
     title: t`El Salvador`,
   },
-  SY: {
+  {
+    id: 'SY',
     title: t`Syria`,
   },
-  SZ: {
+  {
+    id: 'SZ',
     title: t`Swaziland`,
   },
-  TD: {
+  {
+    id: 'TD',
     title: t`Chad`,
   },
-  TF: {
+  {
+    id: 'TF',
     title: t`French Southern and Antarctic Lands`,
   },
-  TG: {
+  {
+    id: 'TG',
     title: t`Togo`,
   },
-  TH: {
+  {
+    id: 'TH',
     title: t`Thailand`,
   },
-  TJ: {
+  {
+    id: 'TJ',
     title: t`Tajikistan`,
   },
-  TL: {
+  {
+    id: 'TL',
     title: t`Timor-Leste`,
   },
-  TM: {
+  {
+    id: 'TM',
     title: t`Turkmenistan`,
   },
-  TN: {
+  {
+    id: 'TN',
     title: t`Tunisia`,
   },
-  TR: {
+  {
+    id: 'TR',
     title: t`Turkey`,
   },
-  TT: {
+  {
+    id: 'TT',
     title: t`Trinidad and Tobago`,
   },
-  TW: {
+  {
+    id: 'TW',
     title: t`Taiwan`,
   },
-  TZ: {
+  {
+    id: 'TZ',
     title: t`Tanzania`,
   },
-  UA: {
+  {
+    id: 'UA',
     title: t`Ukraine`,
   },
-  UG: {
+  {
+    id: 'UG',
     title: t`Uganda`,
   },
-  US: {
+  {
+    id: 'US',
     title: t`United States`,
   },
-  UY: {
+  {
+    id: 'UY',
     title: t`Uruguay`,
   },
-  UZ: {
+  {
+    id: 'UZ',
     title: t`Uzbekistan`,
   },
-  VE: {
+  {
+    id: 'VE',
     title: t`Venezuela`,
   },
-  VN: {
+  {
+    id: 'VN',
     title: t`Vietnam`,
   },
-  VU: {
+  {
+    id: 'VU',
     title: t`Vanuatu`,
   },
-  YE: {
+  {
+    id: 'YE',
     title: t`Yemen`,
   },
-  ZA: {
+  {
+    id: 'ZA',
     title: t`South Africa`,
   },
-  ZM: {
+  {
+    id: 'ZM',
     title: t`Zambia`,
   },
-  ZW: {
+  {
+    id: 'ZW',
     title: t`Zimbabwe`,
   },
-};
+];
 
 export default data;
