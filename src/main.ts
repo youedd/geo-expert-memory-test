@@ -87,9 +87,15 @@ const showTerritory = (node: SVGPathElement) => {
   panZoom.zoom((0.8 * panZoom.getZoom()) / newScale);
 };
 
+let isDrag = false;
+document.addEventListener("mousedown", () => (isDrag = false));
+document.addEventListener("mousemove", () => (isDrag = true));
+
 document.querySelectorAll(".land").forEach((elem) =>
-  elem.addEventListener("click", () => {
-    showTerritory((elem as unknown) as SVGPathElement);
+  elem.addEventListener("mouseup", (event) => {
+    if (!isDrag) {
+      showTerritory((elem as unknown) as SVGPathElement);
+    }
   })
 );
 const form = document.getElementById("form") as HTMLFontElement;
