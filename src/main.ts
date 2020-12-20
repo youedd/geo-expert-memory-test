@@ -84,7 +84,7 @@ const showTerritory = (node: SVGPathElement) => {
     bbox.height / viewBox.height
   );
 
-  panZoom.zoom(panZoom.getZoom() / newScale);
+  panZoom.zoom((0.8 * panZoom.getZoom()) / newScale);
 };
 
 document.querySelectorAll(".land").forEach((elem) =>
