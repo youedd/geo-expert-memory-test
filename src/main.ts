@@ -87,6 +87,11 @@ const showTerritory = (node: SVGPathElement) => {
   panZoom.zoom(panZoom.getZoom() / newScale);
 };
 
+document.querySelectorAll(".land").forEach((elem) =>
+  elem.addEventListener("click", () => {
+    showTerritory((elem as unknown) as SVGPathElement);
+  })
+);
 const form = document.getElementById("form") as HTMLFontElement;
 form.addEventListener("submit", (event) => {
   event.preventDefault();
