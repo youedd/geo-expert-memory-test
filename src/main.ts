@@ -33,10 +33,12 @@ const state = {
 };
 
 const panZoom = creatPanZoom();
+window.addEventListener("resize", () => {
+  panZoom.resize();
+});
 
 const homeButton = document.getElementById("home");
 homeButton.addEventListener("click", () => {
-  panZoom.resize();
   panZoom.fit();
   panZoom.center();
 });
