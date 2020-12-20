@@ -35,6 +35,7 @@ const state = {
 const panZoom = SvgPanZoom("svg", {
   dblClickZoomEnabled: true,
   mouseWheelZoomEnabled: true,
+  maxZoom: 50,
 });
 
 window.addEventListener("resize", () => {
@@ -62,22 +63,45 @@ zoomoutButoon.addEventListener("click", () => {
   panZoom.zoom(newZoom);
 });
 
-const description = document.getElementById("description") as HTMLElement;
 const updateDescription = () => {
+  const description = document.getElementById("description") as HTMLElement;
   const count = state.total - state.found;
-  description.innerHTML = t`How many terretories can you find?<br> ${count} to recall…`;
+  description.innerHTML = t`How many territories can you find?<br> ${count} to recall…`;
 };
 
-const input = document.getElementById("input") as HTMLInputElement;
-input.addEventListener("change", () => {
+const showTerritory = (node: SVGPathElement) => {
+  panZoom.fit();
+  const bbox = node.getBBox();
+
+  const { width, height, realZoom, viewBox } = panZoom.getSizes();
+  panZoom.pan({
+    x: -realZoom * (bbox.x - width / (realZoom * 2) + bbox.width / 2),
+    y: -realZoom * (bbox.y - height / (realZoom * 2) + bbox.height / 2),
+  });
+
+  const newScale = Math.max(
+    bbox.width / viewBox.width,
+    bbox.height / viewBox.height
+  );
+
+  panZoom.zoom(panZoom.getZoom() / newScale);
+};
+
+const form = document.getElementById("form") as HTMLFontElement;
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const input = document.getElementById("input") as HTMLInputElement;
   const answer = input.value.trim().toLowerCase();
-  const terretory = data.find(
+  const territory = data.find(
     (item) => item.title.toLowerCase() === answer.toLowerCase()
   );
 
-  if (terretory) {
-    const element = document.getElementById(terretory.id);
+  if (territory) {
+    const element = document.getElementById(territory.id);
+    showTerritory((element as unknown) as SVGPathElement);
     element.setAttribute("correct", "");
+
     state.found++;
     updateDescription();
   }
