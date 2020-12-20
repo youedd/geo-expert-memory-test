@@ -1,2 +1,2 @@
 # terretories-memory-test
-world map terretories memory test
+terretories memory test
