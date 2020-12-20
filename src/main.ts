@@ -33,17 +33,12 @@ const state = {
 };
 
 const panZoom = creatPanZoom();
-window.addEventListener("resize", () => {
-  panZoom.resize();
-  panZoom.fit();
-  panZoom.center();
-});
 
 const homeButton = document.getElementById("home");
 homeButton.addEventListener("click", () => {
-  // clearInterval(intervalId);
-  // intervalId = null;
-  panZoom.reset();
+  panZoom.resize();
+  panZoom.fit();
+  panZoom.center();
 });
 
 const zoominButoon = document.getElementById("zoomin");
