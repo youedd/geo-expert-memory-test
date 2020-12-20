@@ -2,6 +2,7 @@ $black: #222222;
 $green: #879b6c;
 $gray: #929292;
 $white: #d8d8d8;
+$inputWidth: 300px;
 
 html,
 body {
@@ -10,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 body {
   display: flex;
@@ -36,13 +38,23 @@ svg {
 .land[correct] {
   fill: $green;
 }
+#description {
+  color: white;
+  top: 87px;
+  right: 87px;
+  position: absolute;
+  margin: 0;
+  text-shadow: $black 1px 0 10px;
+  max-width: $inputWidth;
+  text-align: right;
+}
 
 input {
   opacity: 0.8;
 
   position: absolute;
   box-sizing: border-box;
- 
+
   right: 87px;
   top: 25px;
   padding: 10px;
@@ -53,6 +65,8 @@ input {
 
   border-radius: 5px;
   border: 0;
+
+  width: $inputWidth;
 }
 .panel {
   display: flex;

@@ -1,4 +1,5 @@
-import SvgPanZoom, { resetPan } from "svg-pan-zoom";
+import { t } from "ttag";
+import SvgPanZoom from "svg-pan-zoom";
 import data from "./scripts/data";
 /*
 // const delta = 0.1;
@@ -25,6 +26,10 @@ import data from "./scripts/data";
 //   }, 1000 / 60);
 // };
 */
+
+const state = {
+  total: data.length,
+  found: 0,
 };
 
 const panZoom = SvgPanZoom("svg", {
@@ -57,16 +62,26 @@ zoomoutButoon.addEventListener("click", () => {
   panZoom.zoom(newZoom);
 });
 
+const description = document.getElementById("description") as HTMLElement;
+const updateDescription = () => {
+  const count = state.total - state.found;
+  description.innerHTML = t`How many terretories can you find?<br> ${count} to recall…`;
+};
 
 const input = document.getElementById("input") as HTMLInputElement;
-
-input.addEventListener('change', ()=> {
+input.addEventListener("change", () => {
   const answer = input.value.trim().toLowerCase();
-  const terretory = data.find(item => item.title.toLowerCase() === answer.toLowerCase() )
-  if( terretory ) {
+  const terretory = data.find(
+    (item) => item.title.toLowerCase() === answer.toLowerCase()
+  );
+
+  if (terretory) {
     const element = document.getElementById(terretory.id);
     element.setAttribute("correct", "");
+    state.found++;
+    updateDescription();
   }
-  input.value = ""
-})
+  input.value = "";
+});
 
+updateDescription();
