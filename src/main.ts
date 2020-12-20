@@ -1,4 +1,4 @@
-import SvgPanZoom from "svg-pan-zoom";
+import SvgPanZoom, { resetPan } from "svg-pan-zoom";
 import data from "./scripts/data";
 
 const delta = 0.1;
@@ -13,9 +13,13 @@ const svgHandler = SvgPanZoom("svg", {
 
 });
 
+
 const homeButton = document.getElementById("home");
 homeButton.addEventListener("click", () => {
+  clearInterval(intervalId);
+  intervalId= null;
   svgHandler.reset();
+  
 });
 
 let newZoom;
@@ -30,6 +34,8 @@ const startLerp = () => {
     const zoom = svgHandler.getZoom();
     if (zoom === newZoom) {
       clearInterval(intervalId);
+      intervalId= null;
+      return;
     }
     svgHandler.zoom(lerp(zoom, newZoom, delta));
   }, 1000 / 60);
