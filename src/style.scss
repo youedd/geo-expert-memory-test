@@ -3,6 +3,7 @@ $green: #879b6c;
 $gray: #929292;
 $white: #d8d8d8;
 $inputWidth: 300px;
+$shadow: $black 0 0 5px;
 
 html,
 body {
@@ -44,7 +45,7 @@ svg {
   right: 87px;
   position: absolute;
   margin: 0;
-  text-shadow: $black 1px 0 10px;
+  text-shadow: $shadow;
   text-align: right;
 }
 
@@ -66,6 +67,7 @@ svg {
   border: 0;
 
   max-width: $inputWidth;
+  box-shadow: $shadow;
 }
 
 .panel {
@@ -87,6 +89,7 @@ svg {
     font-size: 32px;
     margin: 5px;
     color: $black;
+    box-shadow: $shadow;
   }
 
   span:hover {
