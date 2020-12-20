@@ -1,706 +1,531 @@
 import { t } from "ttag";
 
-const data = [
-  {
-    id: "AE",
+const data = {
+  AE: {
     title: t`United Arab Emirates`,
   },
-  {
-    id: "AF",
+  AF: {
     title: t`Afghanistan`,
   },
-  {
-    id: "AL",
+  AL: {
     title: t`Albania`,
   },
-  {
-    id: "AM",
+  AM: {
     title: t`Armenia`,
   },
-  {
-    id: "AO",
+  AO: {
     title: t`Angola`,
   },
-  {
-    id: "AR",
+  AR: {
     title: t`Argentina`,
   },
-  {
-    id: "AT",
+  AT: {
     title: t`Austria`,
   },
-  {
-    id: "AU",
+  AU: {
     title: t`Australia`,
   },
-  {
-    id: "AZ",
+  AZ: {
     title: t`Azerbaijan`,
   },
-  {
-    id: "BA",
+  BA: {
     title: t`Bosnia and Herzegovina`,
   },
-  {
-    id: "BD",
+  BD: {
     title: t`Bangladesh`,
   },
-  {
-    id: "BE",
+  BE: {
     title: t`Belgium`,
   },
-  {
-    id: "BF",
+  BF: {
     title: t`Burkina Faso`,
   },
-  {
-    id: "BG",
+  BG: {
     title: t`Bulgaria`,
   },
-  {
-    id: "BI",
+  BI: {
     title: t`Burundi`,
   },
-  {
-    id: "BJ",
+  BJ: {
     title: t`Benin`,
   },
-  {
-    id: "BN",
+  BN: {
     title: t`Brunei Darussalam`,
   },
-  {
-    id: "BO",
+  BO: {
     title: t`Bolivia`,
   },
-  {
-    id: "BR",
+  BR: {
     title: t`Brazil`,
   },
-  {
-    id: "BS",
+  BS: {
     title: t`Bahamas`,
   },
-  {
-    id: "BT",
+  BT: {
     title: t`Bhutan`,
   },
-  {
-    id: "BW",
+  BW: {
     title: t`Botswana`,
   },
-  {
-    id: "BY",
+  BY: {
     title: t`Belarus`,
   },
-  {
-    id: "BZ",
+  BZ: {
     title: t`Belize`,
   },
-  {
-    id: "CA",
+  CA: {
     title: t`Canada`,
   },
-  {
-    id: "CD",
+  CD: {
     title: t`Democratic Republic of Congo`,
   },
-  {
-    id: "CF",
+  CF: {
     title: t`Central African Republic`,
   },
-  {
-    id: "CG",
+  CG: {
     title: t`Republic of Congo`,
   },
-  {
-    id: "CH",
+  CH: {
     title: t`Switzerland`,
   },
-  {
-    id: "CI",
+  CI: {
     title: t`Côte d'Ivoire`,
   },
-  {
-    id: "CL",
+  CL: {
     title: t`Chile`,
   },
-  {
-    id: "CM",
+  CM: {
     title: t`Cameroon`,
   },
-  {
-    id: "CN",
+  CN: {
     title: t`China`,
   },
-  {
-    id: "CO",
+  CO: {
     title: t`Colombia`,
   },
-  {
-    id: "CR",
+  CR: {
     title: t`Costa Rica`,
   },
-  {
-    id: "CU",
+  CU: {
     title: t`Cuba`,
   },
-  {
-    id: "CY",
+  CY: {
     title: t`Cyprus`,
   },
-  {
-    id: "CZ",
+  CZ: {
     title: t`Czechia`,
   },
-  {
-    id: "DE",
+  DE: {
     title: t`Germany`,
   },
-  {
-    id: "DJ",
+  DJ: {
     title: t`Djibouti`,
   },
-  {
-    id: "DK",
+  DK: {
     title: t`Denmark`,
   },
-  {
-    id: "DO",
+  DO: {
     title: t`Dominican Republic`,
   },
-  {
-    id: "DZ",
+  DZ: {
     title: t`Algeria`,
   },
-  {
-    id: "EC",
+  EC: {
     title: t`Ecuador`,
   },
-  {
-    id: "EE",
+  EE: {
     title: t`Estonia`,
   },
-  {
-    id: "EG",
+  EG: {
     title: t`Egypt`,
   },
-  {
-    id: "ER",
+  ER: {
     title: t`Eritrea`,
   },
-  {
-    id: "ES",
+  ES: {
     title: t`Spain`,
   },
-  {
-    id: "ET",
+  ET: {
     title: t`Ethiopia`,
   },
-  {
-    id: "FK",
+  FK: {
     title: t`Falkland Islands`,
   },
-  {
-    id: "FI",
+  FI: {
     title: t`Finland`,
   },
-  {
-    id: "FJ",
+  FJ: {
     title: t`Fiji`,
   },
-  {
-    id: "FR",
+  FR: {
     title: t`France`,
   },
-  {
-    id: "GA",
+  GA: {
     title: t`Gabon`,
   },
-  {
-    id: "GB",
+  GB: {
     title: t`United Kingdom`,
   },
-  {
-    id: "GE",
+  GE: {
     title: t`Georgia`,
   },
-  {
-    id: "GF",
+  GF: {
     title: t`French Guiana`,
   },
-  {
-    id: "GH",
+  GH: {
     title: t`Ghana`,
   },
-  {
-    id: "GL",
+  GL: {
     title: t`Greenland`,
   },
-  {
-    id: "GM",
+  GM: {
     title: t`Gambia`,
   },
-  {
-    id: "GN",
+  GN: {
     title: t`Guinea`,
   },
-  {
-    id: "GQ",
+  GQ: {
     title: t`Equatorial Guinea`,
   },
-  {
-    id: "GR",
+  GR: {
     title: t`Greece`,
   },
-  {
-    id: "GT",
+  GT: {
     title: t`Guatemala`,
   },
-  {
-    id: "GW",
+  GW: {
     title: t`Guinea-Bissau`,
   },
-  {
-    id: "GY",
+  GY: {
     title: t`Guyana`,
   },
-  {
-    id: "HN",
+  HN: {
     title: t`Honduras`,
   },
-  {
-    id: "HR",
+  HR: {
     title: t`Croatia`,
   },
-  {
-    id: "HT",
+  HT: {
     title: t`Haiti`,
   },
-  {
-    id: "HU",
+  HU: {
     title: t`Hungary`,
   },
-  {
-    id: "ID",
+  ID: {
     title: t`Indonesia`,
   },
-  {
-    id: "IE",
+  IE: {
     title: t`Ireland`,
   },
-  {
-    id: "IL",
+  IL: {
     title: t`Israel`,
   },
-  {
-    id: "IN",
+  IN: {
     title: t`India`,
   },
-  {
-    id: "IQ",
+  IQ: {
     title: t`Iraq`,
   },
-  {
-    id: "IR",
+  IR: {
     title: t`Iran`,
   },
-  {
-    id: "IS",
+  IS: {
     title: t`Iceland`,
   },
-  {
-    id: "IT",
+  IT: {
     title: t`Italy`,
   },
-  {
-    id: "JM",
+  JM: {
     title: t`Jamaica`,
   },
-  {
-    id: "JO",
+  JO: {
     title: t`Jordan`,
   },
-  {
-    id: "JP",
+  JP: {
     title: t`Japan`,
   },
-  {
-    id: "KE",
+  KE: {
     title: t`Kenya`,
   },
-  {
-    id: "KG",
+  KG: {
     title: t`Kyrgyzstan`,
   },
-  {
-    id: "KH",
+  KH: {
     title: t`Cambodia`,
   },
-  {
-    id: "KP",
+  KP: {
     title: t`North Korea`,
   },
-  {
-    id: "KR",
+  KR: {
     title: t`South Korea`,
   },
-  {
-    id: "XK",
+  XK: {
     title: t`Kosovo`,
   },
-  {
-    id: "KW",
+  KW: {
     title: t`Kuwait`,
   },
-  {
-    id: "KZ",
+  KZ: {
     title: t`Kazakhstan`,
   },
-  {
-    id: "LA",
+  LA: {
     title: t`Lao People's Democratic Republic`,
   },
-  {
-    id: "LB",
+  LB: {
     title: t`Lebanon`,
   },
-  {
-    id: "LK",
+  LK: {
     title: t`Sri Lanka`,
   },
-  {
-    id: "LR",
+  LR: {
     title: t`Liberia`,
   },
-  {
-    id: "LS",
+  LS: {
     title: t`Lesotho`,
   },
-  {
-    id: "LT",
+  LT: {
     title: t`Lithuania`,
   },
-  {
-    id: "LU",
+  LU: {
     title: t`Luxembourg`,
   },
-  {
-    id: "LV",
+  LV: {
     title: t`Latvia`,
   },
-  {
-    id: "LY",
+  LY: {
     title: t`Libya`,
   },
-  {
-    id: "MA",
+  MA: {
     title: t`Morocco`,
   },
-  {
-    id: "MD",
+  MD: {
     title: t`Moldova`,
   },
-  {
-    id: "ME",
+  ME: {
     title: t`Montenegro`,
   },
-  {
-    id: "MG",
+  MG: {
     title: t`Madagascar`,
   },
-  {
-    id: "MK",
+  MK: {
     title: t`North Macedonia`,
   },
-  {
-    id: "ML",
+  ML: {
     title: t`Mali`,
   },
-  {
-    id: "MM",
+  MM: {
     title: t`Myanmar`,
   },
-  {
-    id: "MN",
+  MN: {
     title: t`Mongolia`,
   },
-  {
-    id: "MR",
+  MR: {
     title: t`Mauritania`,
   },
-  {
-    id: "MW",
+  MW: {
     title: t`Malawi`,
   },
-  {
-    id: "MX",
+  MX: {
     title: t`Mexico`,
   },
-  {
-    id: "MY",
+  MY: {
     title: t`Malaysia`,
   },
-  {
-    id: "MZ",
+  MZ: {
     title: t`Mozambique`,
   },
-  {
-    id: "NA",
+  NA: {
     title: t`Namibia`,
   },
-  {
-    id: "NC",
+  NC: {
     title: t`New Caledonia`,
   },
-  {
-    id: "NE",
+  NE: {
     title: t`Niger`,
   },
-  {
-    id: "NG",
+  NG: {
     title: t`Nigeria`,
   },
-  {
-    id: "NI",
+  NI: {
     title: t`Nicaragua`,
   },
-  {
-    id: "NL",
+  NL: {
     title: t`Netherlands`,
   },
-  {
-    id: "NO",
+  NO: {
     title: t`Norway`,
   },
-  {
-    id: "NP",
+  NP: {
     title: t`Nepal`,
   },
-  {
-    id: "NZ",
+  NZ: {
     title: t`New Zealand`,
   },
-  {
-    id: "OM",
+  OM: {
     title: t`Oman`,
   },
-  {
-    id: "PA",
+  PA: {
     title: t`Panama`,
   },
-  {
-    id: "PE",
+  PE: {
     title: t`Peru`,
   },
-  {
-    id: "PG",
+  PG: {
     title: t`Papua New Guinea`,
   },
-  {
-    id: "PH",
+  PH: {
     title: t`Philippines`,
   },
-  {
-    id: "PL",
+  PL: {
     title: t`Poland`,
   },
-  {
-    id: "PK",
+  PK: {
     title: t`Pakistan`,
   },
-  {
-    id: "PR",
+  PR: {
     title: t`Puerto Rico`,
   },
-  {
-    id: "PS",
+  PS: {
     title: t`Palestinian Territories`,
   },
-  {
-    id: "PT",
+  PT: {
     title: t`Portugal`,
   },
-  {
-    id: "PY",
+  PY: {
     title: t`Paraguay`,
   },
-  {
-    id: "QA",
+  QA: {
     title: t`Qatar`,
   },
-  {
-    id: "RO",
+  RO: {
     title: t`Romania`,
   },
-  {
-    id: "RS",
+  RS: {
     title: t`Serbia`,
   },
-  {
-    id: "RU",
+  RU: {
     title: t`Russia`,
   },
-  {
-    id: "RW",
+  RW: {
     title: t`Rwanda`,
   },
-  {
-    id: "SA",
+  SA: {
     title: t`Saudi Arabia`,
   },
-  {
-    id: "SB",
+  SB: {
     title: t`Solomon Islands`,
   },
-  {
-    id: "SD",
+  SD: {
     title: t`Sudan`,
   },
-  {
-    id: "SE",
+  SE: {
     title: t`Sweden`,
   },
-  {
-    id: "SI",
+  SI: {
     title: t`Slovenia`,
   },
-  {
-    id: "SJ",
+  SJ: {
     title: t`Svalbard and Jan Mayen`,
   },
-  {
-    id: "SK",
+  SK: {
     title: t`Slovakia`,
   },
-  {
-    id: "SL",
+  SL: {
     title: t`Sierra Leone`,
   },
-  {
-    id: "SN",
+  SN: {
     title: t`Senegal`,
   },
-  {
-    id: "SO",
+  SO: {
     title: t`Somalia`,
   },
-  {
-    id: "SR",
+  SR: {
     title: t`Suriname`,
   },
-  {
-    id: "SS",
+  SS: {
     title: t`South Sudan`,
   },
-  {
-    id: "SV",
+  SV: {
     title: t`El Salvador`,
   },
-  {
-    id: "SY",
+  SY: {
     title: t`Syria`,
   },
-  {
-    id: "SZ",
+  SZ: {
     title: t`Swaziland`,
   },
-  {
-    id: "TD",
+  TD: {
     title: t`Chad`,
   },
-  {
-    id: "TF",
+  TF: {
     title: t`French Southern and Antarctic Lands`,
   },
-  {
-    id: "TG",
+  TG: {
     title: t`Togo`,
   },
-  {
-    id: "TH",
+  TH: {
     title: t`Thailand`,
   },
-  {
-    id: "TJ",
+  TJ: {
     title: t`Tajikistan`,
   },
-  {
-    id: "TL",
+  TL: {
     title: t`Timor-Leste`,
   },
-  {
-    id: "TM",
+  TM: {
     title: t`Turkmenistan`,
   },
-  {
-    id: "TN",
+  TN: {
     title: t`Tunisia`,
   },
-  {
-    id: "TR",
+  TR: {
     title: t`Turkey`,
   },
-  {
-    id: "TT",
+  TT: {
     title: t`Trinidad and Tobago`,
   },
-  {
-    id: "TW",
+  TW: {
     title: t`Taiwan`,
   },
-  {
-    id: "TZ",
+  TZ: {
     title: t`Tanzania`,
   },
-  {
-    id: "UA",
+  UA: {
     title: t`Ukraine`,
   },
-  {
-    id: "UG",
+  UG: {
     title: t`Uganda`,
   },
-  {
-    id: "US",
+  US: {
     title: t`United States`,
   },
-  {
-    id: "UY",
+  UY: {
     title: t`Uruguay`,
   },
-  {
-    id: "UZ",
+  UZ: {
     title: t`Uzbekistan`,
   },
-  {
-    id: "VE",
+  VE: {
     title: t`Venezuela`,
   },
-  {
-    id: "VN",
+  VN: {
     title: t`Vietnam`,
   },
-  {
-    id: "VU",
+  VU: {
     title: t`Vanuatu`,
   },
-  {
-    id: "YE",
+  YE: {
     title: t`Yemen`,
   },
-  {
-    id: "ZA",
+  ZA: {
     title: t`South Africa`,
   },
-  {
-    id: "ZM",
+  ZM: {
     title: t`Zambia`,
   },
-  {
-    id: "ZW",
+  ZW: {
     title: t`Zimbabwe`,
   },
-];
+};
 
 export default data;

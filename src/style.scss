@@ -18,7 +18,7 @@ body {
 
 svg {
   flex: 1;
-  padding: 5%;
+  // padding: 5%;
 }
 
 .land {
@@ -31,4 +31,25 @@ svg {
 
 .land:hover {
   fill: $gray;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 20px;
+  right: 0;
+
+  span {
+    background-color: $white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 32px;
+    margin: 5px;
+    color: $black;
+  }
+
+  span:hover {
+    background-color: $gray;
+  }
 }
