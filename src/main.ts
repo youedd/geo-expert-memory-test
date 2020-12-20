@@ -30,9 +30,18 @@ import { creatPanZoom } from "./scripts/initZoomPan";
 const state = {
   total: data.length,
   found: 0,
+  mapLocked: false,
 };
 
 const panZoom = creatPanZoom();
+const lockButton = document.getElementById("lock");
+lockButton.addEventListener("click", () => {
+  lockButton.className = `icon ${
+    state.mapLocked ? "icon-unlocked" : "icon-lock"
+  }`;
+  state.mapLocked = !state.mapLocked;
+});
+
 window.addEventListener("resize", () => {
   panZoom.resize();
 });
@@ -102,7 +111,9 @@ form.addEventListener("submit", (event) => {
 
   if (territory) {
     const element = document.getElementById(territory.id);
-    showTerritory((element as unknown) as SVGPathElement);
+    if (!state.mapLocked) {
+      showTerritory((element as unknown) as SVGPathElement);
+    }
     const title = element.getElementsByTagName("title")[0];
     title.innerHTML = territory.title;
     if (!element.hasAttribute("correct")) {
