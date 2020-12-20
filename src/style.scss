@@ -68,12 +68,18 @@ input {
 
   width: $inputWidth;
 }
+
 .panel {
   display: flex;
   flex-direction: column;
   position: absolute;
   padding: 20px;
   right: 0;
+
+  a {
+    display: flex;
+    text-decoration: none;
+  }
 
   span {
     background-color: $white;
