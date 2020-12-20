@@ -101,7 +101,8 @@ form.addEventListener("submit", (event) => {
     const element = document.getElementById(territory.id);
     showTerritory((element as unknown) as SVGPathElement);
     element.setAttribute("correct", "");
-
+    const title = element.getElementsByTagName("title")[0];
+    title.innerHTML = territory.title;
     state.found++;
     updateDescription();
   }
