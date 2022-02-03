@@ -6,7 +6,7 @@ $inputWidth: 300px;
 $inputHeight: 52px;
 $spacing: 10px;
 $radius: 5px;
-$fontSize: 10px;
+$fontSize: 18px;
 $iconSize: 32px;
 $shadow: $black 0 0 5px;
 
@@ -61,6 +61,7 @@ svg {
 #description {
   color: white;
   margin: 0;
+  text-align: right;
   text-shadow: $shadow;
 }
 
