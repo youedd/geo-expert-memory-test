@@ -10,7 +10,7 @@ Have fun 😉 !
 
 
 ## Demo
-https://youedd.github.io/territories-memory-test/
+https://youedd.github.io/geo-expert-memory-test
 
 The game is in English only.
 Support for other languages may be available soon 🤞 ! (feel free to contribute).
