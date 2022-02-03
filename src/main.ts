@@ -2,50 +2,28 @@ import { t } from "ttag";
 import data from "./scripts/data";
 import { creatPanZoom } from "./scripts/initZoomPan";
 
-const state = {
+const state = JSON.parse(localStorage.getItem("state")) || {
   total: data.length,
-  found: 0,
+  found: [],
   mapLocked: false,
 };
 
 const panZoom = creatPanZoom();
+const form = document.getElementById("form") as HTMLFormElement;
+const description = document.getElementById("description") as HTMLElement;
 const lockButton = document.getElementById("lock");
-lockButton.addEventListener("click", () => {
-  lockButton.className = `icon ${
-    state.mapLocked ? "icon-unlocked" : "icon-lock"
-  }`;
-  state.mapLocked = !state.mapLocked;
-});
-
-window.addEventListener("resize", () => {
-  panZoom.resize();
-});
-
 const homeButton = document.getElementById("home");
-homeButton.addEventListener("click", () => {
-  panZoom.fit();
-  panZoom.center();
-});
-
-const zoominButoon = document.getElementById("zoomin");
-zoominButoon.addEventListener("click", () => {
-  const newZoom = panZoom.getZoom() * 1.5;
-  panZoom.zoom(newZoom);
-});
-
-const zoomoutButoon = document.getElementById("zoomout");
-zoomoutButoon.addEventListener("click", () => {
-  const newZoom = panZoom.getZoom() / 1.5;
-  panZoom.zoom(newZoom);
-});
+const zoominButton = document.getElementById("zoomin");
+const zoomoutButton = document.getElementById("zoomout");
+const deleteButton = document.getElementById("delete");
 
 const updateDescription = () => {
-  const description = document.getElementById("description") as HTMLElement;
-  const count = state.total - state.found;
+  const count = state.total - state.found.length;
   description.innerHTML = t`How many territories can you find?<br> ${count} to recall…`;
+  localStorage.setItem("state", JSON.stringify(state));
 };
 
-const showTerritory = (node: SVGPathElement) => {
+const zoomOnTerritory = (node: SVGPathElement) => {
   panZoom.fit();
   const bbox = node.getBBox();
 
@@ -63,18 +41,56 @@ const showTerritory = (node: SVGPathElement) => {
   panZoom.zoom((0.8 * panZoom.getZoom()) / newScale);
 };
 
+updateDescription();
+
+state.found.forEach((id) => {
+  document.getElementById(id).setAttribute("correct", "");
+});
+
+// EVENTS
+window.addEventListener("resize", () => {
+  panZoom.resize();
+});
+
+lockButton.addEventListener("click", () => {
+  lockButton.className = `icon ${
+    state.mapLocked ? "icon-unlocked" : "icon-lock"
+  }`;
+  state.mapLocked = !state.mapLocked;
+});
+
+homeButton.addEventListener("click", () => {
+  panZoom.fit();
+  panZoom.center();
+});
+
+zoominButton.addEventListener("click", () => {
+  const newZoom = panZoom.getZoom() * 1.5;
+  panZoom.zoom(newZoom);
+});
+
+zoomoutButton.addEventListener("click", () => {
+  const newZoom = panZoom.getZoom() / 1.5;
+  panZoom.zoom(newZoom);
+});
+
+deleteButton.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
+
 let isDrag = false;
 document.addEventListener("mousedown", () => (isDrag = false));
 document.addEventListener("mousemove", () => (isDrag = true));
 
 document.querySelectorAll(".land").forEach((elem) =>
-  elem.addEventListener("mouseup", (event) => {
+  elem.addEventListener("mouseup", () => {
     if (!isDrag) {
-      showTerritory((elem as unknown) as SVGPathElement);
+      zoomOnTerritory(elem as unknown as SVGPathElement);
     }
   })
 );
-const form = document.getElementById("form") as HTMLFontElement;
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -87,17 +103,15 @@ form.addEventListener("submit", (event) => {
   if (territory) {
     const element = document.getElementById(territory.id);
     if (!state.mapLocked) {
-      showTerritory((element as unknown) as SVGPathElement);
+      zoomOnTerritory(element as unknown as SVGPathElement);
     }
     const title = element.getElementsByTagName("title")[0];
     title.innerHTML = territory.title;
     if (!element.hasAttribute("correct")) {
       element.setAttribute("correct", "");
-      state.found++;
+      state.found.push(territory.id);
     }
     updateDescription();
   }
   input.value = "";
 });
-
-updateDescription();
