@@ -1,31 +1,6 @@
 import { t } from "ttag";
 import data from "./scripts/data";
 import { creatPanZoom } from "./scripts/initZoomPan";
-/*
-// const delta = 0.1;
-
-// const lerp = (start: number, end: number, amt: number) => {
-//   return (1 - amt) * start + amt * end;
-// };
-
-// let newZoom;
-// let intervalId: NodeJS.Timeout | null = null;
-
-// const startLerp = () => {
-//   if (intervalId) {
-//     return;
-//   }
-//   intervalId = setInterval(() => {
-//     const zoom = panZoom.getZoom();
-//     if (zoom === newZoom) {
-//       clearInterval(intervalId);
-//       intervalId = null;
-//       return;
-//     }
-//     panZoom.zoom(lerp(zoom, newZoom, delta));
-//   }, 1000 / 60);
-// };
-*/
 
 const state = {
   total: data.length,

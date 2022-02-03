@@ -3,6 +3,11 @@ $green: #879b6c;
 $gray: #929292;
 $white: #d8d8d8;
 $inputWidth: 300px;
+$inputHeight: 52px;
+$spacing: 10px;
+$radius: 5px;
+$fontSize: 10px;
+$iconSize: 32px;
 $shadow: $black 0 0 5px;
 
 html,
@@ -14,6 +19,7 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 body {
   display: flex;
   background-color: $black;
@@ -21,7 +27,6 @@ body {
 
 svg {
   flex: 1;
-  // padding: 5%;
 }
 
 .land {
@@ -30,76 +35,68 @@ svg {
   stroke: $black;
   stroke-opacity: 1;
   stroke-width: 0.5;
+
+  &:hover {
+    fill: $gray;
+  }
+
+  &[correct] {
+    fill: $green;
+  }
 }
 
-.land:hover {
-  fill: $gray;
+.pannel {
+  position: absolute;
+  padding: $spacing;
+  right: 0;
 }
 
-.land[correct] {
-  fill: $green;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: $spacing $spacing 0 0;
 }
+
 #description {
   color: white;
-  top: 87px;
-  right: 87px;
-  position: absolute;
   margin: 0;
   text-shadow: $shadow;
-  text-align: right;
 }
 
 #input {
   opacity: 0.8;
 
-  position: absolute;
   box-sizing: border-box;
 
-  right: 87px;
-  top: 25px;
-  padding: 10px;
+  padding: $spacing;
 
-  height: 52px;
+  height: $inputHeight;
 
-  font-size: 24px;
+  font-size: $fontSize;
 
-  border-radius: 5px;
+  border-radius: $radius;
   border: 0;
 
-  max-width: $inputWidth;
+  width: $inputWidth;
   box-shadow: $shadow;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  padding: 20px;
-  right: 0;
+.icon {
+  background-color: $white;
+  padding: $spacing;
+  border-radius: $radius;
+  font-size: $iconSize;
+  margin-left: $spacing;
+  color: $black;
+  box-shadow: $shadow;
 
-  a {
-    display: flex;
-    text-decoration: none;
-  }
-
-  span {
-    background-color: $white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 32px;
-    margin: 5px;
-    color: $black;
-    box-shadow: $shadow;
-  }
-
-  span:hover {
+  &:hover {
     background-color: $gray;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #input,
-  #description {
-    left: 20px;
-  }
+.github-link {
+  display: flex;
+  text-decoration: none;
 }
