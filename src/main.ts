@@ -38,7 +38,7 @@ const zoomOnTerritory = (node: SVGPathElement) => {
     bbox.height / viewBox.height
   );
 
-  panZoom.zoom((0.8 * panZoom.getZoom()) / newScale);
+  panZoom.zoom((0.6 * panZoom.getZoom()) / newScale);
 };
 
 updateDescription();
