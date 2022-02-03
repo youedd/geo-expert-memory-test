@@ -47,6 +47,10 @@ state.found.forEach((id) => {
   document.getElementById(id).setAttribute("correct", "");
 });
 
+lockButton.className = `icon ${
+  !state.mapLocked ? "icon-unlocked" : "icon-lock"
+}`;
+
 // EVENTS
 window.addEventListener("resize", () => {
   panZoom.resize();
@@ -57,6 +61,7 @@ lockButton.addEventListener("click", () => {
     state.mapLocked ? "icon-unlocked" : "icon-lock"
   }`;
   state.mapLocked = !state.mapLocked;
+  localStorage.setItem("state", JSON.stringify(state));
 });
 
 homeButton.addEventListener("click", () => {
