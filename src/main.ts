@@ -44,7 +44,10 @@ const zoomOnTerritory = (node: SVGPathElement) => {
 updateDescription();
 
 state.found.forEach((id) => {
-  document.getElementById(id).setAttribute("correct", "");
+  const element = document.getElementById(id);
+  const title = element.getElementsByTagName("title")[0];
+  title.innerHTML = data.find((country) => country.id === id).title;
+  element.setAttribute("correct", "");
 });
 
 lockButton.className = `icon ${
